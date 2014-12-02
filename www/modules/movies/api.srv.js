@@ -1,9 +1,9 @@
 angular.module('movies').factory('moviesService', function($http, urls, $q){
 
   /* possibly an overkill - POC */
-  function getMissingParams(name, params){
+  function getMissingParams(paramDefinitions, params){
     var missingParams = [];
-    urls[name].params.forEach(function(param){
+    paramDefinitions.forEach(function(param){
       if (param.mandatory && !params[param.name]){
         missingParams.push(param.name);
       }
@@ -13,8 +13,8 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
   }
 
   /* possibly an overkill - POC */
-  function appendDefaultParams(res){
-    urls[name].params.forEach(function(param){
+  function appendDefaultParams(paramDefinitions, res){
+    paramDefinitions.forEach(function(param){
       if (param.value){
         res[param.apiParam] = param.value;
       }
@@ -22,9 +22,9 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
   }
 
   /* possibly an overkill - POC */
-  function appendParams(res){
+  function appendParams(paramDefinitions, res, params){
     Object.keys(params).forEach(function(key){
-      var param = urls[name].params.filter(function(param){
+      var param = paramDefinitions.filter(function(param){
         return param.name === key;
       })[0];
 
@@ -37,7 +37,8 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
   /* possibly an overkill - POC */
   function generateParams(name, params){
     var res = {};
-    var missingParams = getMissingParams(name, params);
+    var paramDefinitions = urls[name].params;
+    var missingParams = getMissingParams(paramDefinitions, params);
     if (missingParams.length){
       throw {
         message: 'missing mandatory params',
@@ -45,8 +46,8 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
       }
     }
 
-    appendDefaultParams(res);
-    appendParams(res);
+    appendDefaultParams(paramDefinitions, res);
+    appendParams(paramDefinitions, res, params);
 
     return res;
   }
