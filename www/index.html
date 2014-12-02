@@ -16,15 +16,21 @@
     <script src="cordova.js"></script>
 
     <!-- your app's js -->
+    <script src="modules/movies/module.js"></script>
+    <script src="modules/movies/api.srv.js"></script>
+    <script src="modules/movies/list.ctrl.js"></script>
+    <script src="modules/movies/route.js"></script>
+
     <script src="modules/tomatoes/module.js"></script>
+    <script src="modules/tomatoes/route.js"></script>
   </head>
   <body ng-app="tomatoes">
-
     <ion-pane>
       <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
+        <h1 class="title">Ionic Tomatoes</h1>
       </ion-header-bar>
       <ion-content>
+        <ion-nav-view></ion-nav-view>
       </ion-content>
     </ion-pane>
   </body>

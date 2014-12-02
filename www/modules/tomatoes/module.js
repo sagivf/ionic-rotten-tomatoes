@@ -1,4 +1,8 @@
-angular.module('tomatoes', ['ionic'])
+angular.module('tomatoes', ['ionic', 'movies'])
+
+  .config(function(urlsProvider){
+    urlsProvider.setApiKey('7ue5rxaj9xn4mhbmsuexug54');
+  })
 
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
