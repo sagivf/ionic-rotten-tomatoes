@@ -7814,3 +7814,38 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
 .platform-c:not(.enable-transitions) * {
   -webkit-transition: none !important;
   transition: none !important; }
+
+.state-movies .item h2 {
+  margin: 25px 0 0 0; }
+.state-movies .bar-subheader {
+  padding: 0; }
+.state-movies .item-input-inset {
+  padding: 5px; }
+.state-movies .no-data {
+  height: 100%; }
+  .state-movies .no-data h1 {
+    display: table-cell;
+    vertical-align: middle; }
+
+.loading-container .loading {
+  background: transparent; }
+
+.ion-loading-a {
+  color: #000000;
+  font-size: 60px;
+  height: 60px;
+  width: 60px; }
+
+.full-screen ion-nav-view {
+  text-align: center;
+  background-color: white; }
+.full-screen .scroll {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0; }
+.full-screen .scroll div {
+  display: table;
+  height: 100%;
+  width: 100%; }

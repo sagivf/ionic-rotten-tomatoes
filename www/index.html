@@ -15,22 +15,29 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!-- your app's 3r'd party js -->
+    <script src="lib/ng-debounce/angular-debounce.js"></script>
+
     <!-- your app's js -->
     <script src="modules/movies/module.js"></script>
     <script src="modules/movies/api.srv.js"></script>
     <script src="modules/movies/list.ctrl.js"></script>
+    <script src="modules/movies/search.drv.js"></script>
     <script src="modules/movies/route.js"></script>
 
     <script src="modules/tomatoes/module.js"></script>
     <script src="modules/tomatoes/route.js"></script>
   </head>
   <body ng-app="tomatoes">
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
+    <ion-pane class="{{'state-' + stateName}}">
+      <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title">Ionic Tomatoes</h1>
       </ion-header-bar>
-      <ion-content>
-        <ion-nav-view></ion-nav-view>
+      <div class="bar bar-subheader">
+        <ui-view name="sub-header"></ui-view>
+      </div>
+      <ion-content class="has-header has-subheader" ng-class="{ 'full-screen': fullScreen }">
+        <ion-nav-view name="main"></ion-nav-view>
       </ion-content>
     </ion-pane>
   </body>

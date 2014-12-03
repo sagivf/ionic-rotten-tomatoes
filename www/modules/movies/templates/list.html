@@ -1,3 +1,12 @@
-<div>
-{{movies.list | json}}
+<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching && movies.moviesStore.hasSearch">
+  <h1>No Results</h1>
+</div>
+<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching">
+  <h1>Start Searching!</h1>
+</div>
+<div class="list" ng-show="movies.moviesStore.data.length">
+  <a class="item item-thumbnail-left" ng-repeat="movie in movies.moviesStore.data" href="#">
+    <img ng-src="{{movie.posters.profile}}">
+    <h2>{{movie.title}}</h2>
+  </a>
 </div>

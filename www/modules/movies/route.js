@@ -1,11 +1,14 @@
 angular.module('movies').config(function($stateProvider){
   $stateProvider.state('movies', {
     url: '/movies',
-    templateUrl: 'modules/movies/templates/list.html',
-    controller: 'moviesCtrl as movies',
-    resolve: {
-      movies: function(moviesService){
-        return moviesService.fetch("a");
+    views: {
+      'main': {
+        templateUrl: 'modules/movies/templates/list.html',
+        controller: 'moviesCtrl as movies'
+      },
+      'sub-header': {
+        templateUrl: 'modules/movies/templates/search.html',
+        controller: 'moviesSearchCtrl as movies'
       }
     }
   });

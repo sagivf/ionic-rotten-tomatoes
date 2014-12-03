@@ -1,0 +1,23 @@
+.state-movies {
+
+
+  .item h2 {
+    margin: 25px 0 0 0;
+  }
+
+  .bar-subheader {
+    padding: 0;
+  }
+
+  .item-input-inset {
+    padding: 5px;
+  }
+
+  .no-data {
+    height: 100%;
+    h1 {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}
