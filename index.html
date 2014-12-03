@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>Ionic Roteen Tomatoes</title>
+  <script>
+    if (navigator.appVersion.indexOf("Mobile") > -1){
+      window.location = 'www';
+    }
+  </script>
+  <style>
+    body {
+      background: #0099FF;
+      background: -moz-radial-gradient(center, circle cover, #0099FF 0%, #3366FF 100%);
+      background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #0099FF), color-stop(100%, #3366FF));
+      background: -webkit-radial-gradient(center, circle cover, #0099FF 0%, #3366FF 100%);
+      background: -o-radial-gradient(center, circle cover, #0099FF 0%, #3366FF 100%);
+      background: -ms-radial-gradient(center, circle cover, #0099FF 0%, #3366FF 100%);
+      background: radial-gradient(center, circle cover, #0099FF 0%, #3366FF 100%);
+      background-color: #3366FF;
+    }
+    #device-preview {
+      width: 365px;
+      height: 792px;
+      background: url("phone-case.png") no-repeat right top;
+      position: fixed;
+      top: 50%;
+      right: 100px;
+      margin: -396px auto auto -182px;
+    }
+
+    #image-wrapper {
+      width: 455px;
+      position: fixed;
+      right: 50%;
+      top: 50%;
+      margin-top: -200px;
+      color: white;
+    }
+
+    iframe {
+      position: relative;
+      top: 88px;
+      left: 13px;
+      border: 0;
+    }
+
+    h3 {
+      width: 100%;
+      font-family: arial, helvetica, sans-serif;
+      text-align: center;
+      font-size: 50px;
+    }
+
+    #image-wrapper img:nth-child(2) {
+      margin-left: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div id="image-wrapper">
+    <img src="rtlogo.png">
+  </div>
+
+  <div id="device-preview">
+    <iframe width="340px" height="600px" src="http://localhost:8100"></iframe>
+    <!--<iframe width="340px" height="600px" src="http://sagivf.github.io/ionic-rotten-tomatoes/www"></iframe>-->
+  </div>
+</body> 
+</html>
