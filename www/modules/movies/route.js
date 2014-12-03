@@ -9,12 +9,7 @@ angular.module('movies').config(function($stateProvider){
   $stateProvider.state('movie', {
     url: '/movies/:movie',
     templateUrl: 'modules/movies/templates/item.html',
-    controller: function($scope, movie, reviews){
-      $scope.details = movie.data;
-      reviews.promise.then(function(reviews){
-        $scope.reviews = reviews.data.reviews;
-      });
-    },
+    controller: 'movieCtrl as movie',
     resolve: {
       movie: function(moviesService, $stateParams){
         return moviesService.fetchMovie($stateParams.movie);

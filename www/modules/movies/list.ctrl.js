@@ -1,4 +1,4 @@
-angular.module('movies').controller('moviesCtrl', function($q, $scope, $state, $location, $ionicLoading, moviesService, $stateParams){
+angular.module('movies').controller('moviesCtrl', function($q, $scope, $location, $ionicLoading, moviesService, $stateParams){
   var lastSearch, vm = this;
 
   vm.filter = {
@@ -9,7 +9,6 @@ angular.module('movies').controller('moviesCtrl', function($q, $scope, $state, $
     return this.filter.value;
   }), function (newVal) {
     $location.search('q', newVal);
-   // $state.go('.', { q: newVal});
   });
 
   this.search = function(str){

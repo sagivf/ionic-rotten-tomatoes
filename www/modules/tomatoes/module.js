@@ -4,7 +4,7 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
     urlsProvider.setApiKey('7ue5rxaj9xn4mhbmsuexug54');
   })
 
-  .run(function($ionicPlatform, $rootScope, $ionicLoading, $location) {
+  .run(function($ionicPlatform, $rootScope, $ionicLoading, $window) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -17,7 +17,7 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
     });
 
     $rootScope.goBack = function(){
-      window.history.back();
+      $window.history.back();
     }
 
     $rootScope.$on('$stateChangeStart', function() {
