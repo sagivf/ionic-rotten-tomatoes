@@ -28,17 +28,13 @@
     <script src="modules/tomatoes/module.js"></script>
     <script src="modules/tomatoes/route.js"></script>
   </head>
-  <body ng-app="tomatoes">
-    <ion-pane class="{{'state-' + stateName}}">
-      <ion-header-bar class="bar bar-header bar-positive">
-        <h1 class="title">Ionic Tomatoes</h1>
-      </ion-header-bar>
-      <div class="bar bar-subheader" ng-if="subHeader">
-        <ui-view name="sub-header"></ui-view>
-      </div>
-      <ion-content class="has-header" ng-class="{ 'full-screen': fullScreen, 'has-subheader': subHeader }">
-        <ion-nav-view name="main" animation="slide-left-right"></ion-nav-view>
-      </ion-content>
-    </ion-pane>
+  <body ng-app="tomatoes" class="{{'state-' + stateName}}">
+    <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7">
+      <ion-nav-back-button class="button-clear"  ng-click="goBack()">
+        <i class="ion-arrow-left-c"></i> Back
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-nav-view animation="slide-left-right">
+    </ion-nav-view>
   </body>
 </html>

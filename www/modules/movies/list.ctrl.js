@@ -1,50 +1,41 @@
-angular.module('movies').controller('moviesCtrl', function($scope, $rootScope, moviesStore){
-  this.moviesStore = moviesStore;
+angular.module('movies').controller('moviesCtrl', function($q, $scope, $state, $location, $ionicLoading, moviesService, $stateParams){
+  var lastSearch, vm = this;
 
-  $rootScope.subHeader = true;
-
-  $scope.$watch(angular.bind(this, function () {
-    return this.moviesStore.data;
-  }), function (newVal) {
-    $rootScope.fullScreen = !newVal.length;
-  });
-});
-
-angular.module('movies').controller('moviesSearchCtrl', function($q, $scope, $ionicLoading, moviesService, moviesStore){
-  var lastSearch;
-
-  this.list = moviesStore;
+  vm.filter = {
+    value: $stateParams.q
+  };
 
   $scope.$watch(angular.bind(this, function () {
-    return this.filter && this.filter.value;
+    return this.filter.value;
   }), function (newVal) {
-    moviesStore.hasSearch = newVal && newVal.length;
+    $location.search('q', newVal);
+   // $state.go('.', { q: newVal});
   });
 
   this.search = function(str){
+
     if (lastSearch){
       lastSearch.reject("cancel");
     }
 
     lastSearch = $q.defer();
-    moviesStore.searching = true;
-    moviesStore.error = false;
     $ionicLoading.show({
       template: '<i class="ion-loading-a"></i>',
       showBackdrop: false
     });
 
+    vm.searching = true;
     var movies = moviesService.fetch(str).then(function(res){
       lastSearch.resolve(res);
     });
 
     movies.finally(function(){
-      moviesStore.searching = false;
+      vm.searching = false;
       $ionicLoading.hide();
     });
 
     movies.catch(function(){
-      moviesStore.error = true;
+      vm.error = true;
     });
 
     return lastSearch.promise;

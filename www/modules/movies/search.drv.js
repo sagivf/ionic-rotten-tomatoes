@@ -10,7 +10,7 @@ angular.module('movies').directive('ionSearch', function() {
     link: function(scope, element, attrs) {
       attrs.minLength = attrs.minLength || 0;
       scope.placeholder = attrs.placeholder || '';
-      scope.search = {value: ''};
+      scope.search = scope.search || {value: ''};
 
       if (attrs.source) {
         scope.$watch('search.value', function (newValue) {

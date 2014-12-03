@@ -4,7 +4,7 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
     urlsProvider.setApiKey('7ue5rxaj9xn4mhbmsuexug54');
   })
 
-  .run(function($ionicPlatform, $rootScope, $ionicLoading) {
+  .run(function($ionicPlatform, $rootScope, $ionicLoading, $location) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
@@ -16,6 +16,10 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
       }
     });
 
+    $rootScope.goBack = function(){
+      window.history.back();
+    }
+
     $rootScope.$on('$stateChangeStart', function() {
       $ionicLoading.show({
         template: '<i class="ion-loading-a"></i>',
@@ -24,14 +28,11 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState) {
-      $rootScope.subHeader = false;
       $rootScope.stateName = toState.name;
       $ionicLoading.hide();
     });
 
     $rootScope.$on('$stateChangeError', function() {
-      $rootScope.subHeader = false;
       $ionicLoading.hide();
     });
-
-  })
+  });

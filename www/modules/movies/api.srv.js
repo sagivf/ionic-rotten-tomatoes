@@ -1,7 +1,3 @@
-angular.module('movies').value('moviesStore',  {
-  data: []
-});
-
 angular.module('movies').factory('moviesService', function($http, urls, $q){
 
   /* possibly an overkill - POC */

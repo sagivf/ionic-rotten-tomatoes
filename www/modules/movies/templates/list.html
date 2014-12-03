@@ -1,15 +1,24 @@
-<div class="centered-text" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching && movies.moviesStore.hasSearch && !movies.moviesStore.error">
-  <h1>No Results</h1>
-</div>
-<div class="centered-text" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching  && !movies.moviesStore.error">
-  <h1>Start Searching!</h1>
-</div>
-<div class="centered-text" ng-show="movies.moviesStore.error">
-  <h1>Oops something went wrong!</h1>
-</div>
-<div class="list" ng-show="movies.moviesStore.data.length">
-  <a class="item item-thumbnail-left" ng-repeat="movie in movies.moviesStore.data" ui-sref="movie({ movie: movie.id })">
-    <img ng-src="{{movie.posters.profile}}">
-    <h2>{{movie.title}}</h2>
-  </a>
-</div>
+<ion-view title="Movies" ng-class="{ 'full-screen': !movies.list.length }" hide-back-button="true">
+  <div class="bar bar-subheader">
+    <div class="item-input-inset">
+      <ion-search class="search-wrapper-light" placeholder="Search for movies" min-length="1" filter="movies.filter" model="movies.list" source="movies.search(str)"></ion-search>
+    </div>
+  </div>
+  <ion-content class="has-header has-subheader" >
+    <div class="centered-text" ng-show="!movies.list.length && !movies.searching && movies.filter.value.length && !movies.error">
+      <h1>No Results</h1>
+    </div>
+    <div class="centered-text" ng-show="!movies.list.length && !movies.searching  && !movies.error">
+      <h1>Start Searching!</h1>
+    </div>
+    <div class="centered-text" ng-show="movies.error">
+      <h1>Oops something went wrong!</h1>
+    </div>
+    <div class="list" ng-show="movies.list.length">
+      <a class="item item-thumbnail-left" ng-repeat="movie in movies.list" ui-sref="movie({ movie: movie.id })">
+        <img ng-src="{{movie.posters.profile}}">
+        <h2>{{movie.title}}</h2>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
