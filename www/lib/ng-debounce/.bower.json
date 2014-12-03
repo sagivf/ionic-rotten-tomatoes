@@ -1,0 +1,31 @@
+{
+  "name": "ng-debounce",
+  "version": "0.1.5",
+  "main": "./angular-debounce.js",
+  "ignore": [
+    "Gruntfile.js",
+    "package.json",
+    "test",
+    "karma.conf.js",
+    ".*"
+  ],
+  "dependencies": {
+    "angular": ">=1.2.0"
+  },
+  "devDependencies": {
+    "angular-mocks": ">=1.2.0",
+    "jquery": ">=2.0.3",
+    "es5-shim": ">=2.3.0"
+  },
+  "homepage": "https://github.com/shahata/angular-debounce",
+  "_release": "0.1.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.5",
+    "commit": "1b81ed639538864adbd8aec9876dcfeeed76f7f1"
+  },
+  "_source": "git://github.com/shahata/angular-debounce.git",
+  "_target": "~0.1.5",
+  "_originalSource": "ng-debounce",
+  "_direct": true
+}
