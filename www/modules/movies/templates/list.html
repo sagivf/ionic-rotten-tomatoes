@@ -1,8 +1,11 @@
-<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching && movies.moviesStore.hasSearch">
+<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching && movies.moviesStore.hasSearch && !movies.moviesStore.error">
   <h1>No Results</h1>
 </div>
-<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching">
+<div class="no-data" ng-show="!movies.moviesStore.data.length && !movies.moviesStore.searching  && !movies.moviesStore.error">
   <h1>Start Searching!</h1>
+</div>
+<div class="no-data" ng-show="movies.moviesStore.error">
+  <h1>Oops something went wrong!</h1>
 </div>
 <div class="list" ng-show="movies.moviesStore.data.length">
   <a class="item item-thumbnail-left" ng-repeat="movie in movies.moviesStore.data" href="#">
