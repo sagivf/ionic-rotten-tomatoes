@@ -24,11 +24,13 @@ angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
     });
 
     $rootScope.$on('$stateChangeSuccess', function(event, toState) {
+      $rootScope.subHeader = false;
       $rootScope.stateName = toState.name;
       $ionicLoading.hide();
     });
 
     $rootScope.$on('$stateChangeError', function() {
+      $rootScope.subHeader = false;
       $ionicLoading.hide();
     });
 

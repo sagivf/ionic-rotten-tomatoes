@@ -1,0 +1,49 @@
+.state-movie {
+  width: 500px;
+  height: 500px;
+
+  .movie-head {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+
+ .values .col {
+    cursor: pointer;
+    padding: 20px 0;
+    font-size: 2em;
+    text-align: center;
+    border-color: #8a6de9;
+    background-color: #8a6de9;
+    margin: 10px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 2px 2px 1px #ccc;
+
+   > div:first-child {
+     margin-bottom: 20px;
+   }
+
+  }
+
+  .list {
+    .item {
+
+
+      .quote {
+        white-space: normal;
+      }
+      .critic {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .date {
+        font-size: 0.8em;
+      }
+      .publication {
+        margin-top: 5px;
+        font-size: 0.8em;
+      }
+    }
+  }
+}

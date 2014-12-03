@@ -8,7 +8,7 @@
   <h1>Oops something went wrong!</h1>
 </div>
 <div class="list" ng-show="movies.moviesStore.data.length">
-  <a class="item item-thumbnail-left" ng-repeat="movie in movies.moviesStore.data" href="#">
+  <a class="item item-thumbnail-left" ng-repeat="movie in movies.moviesStore.data" ui-sref="movie({ movie: movie.id })">
     <img ng-src="{{movie.posters.profile}}">
     <h2>{{movie.title}}</h2>
   </a>

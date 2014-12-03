@@ -1,0 +1,33 @@
+<div class="movie-head">
+  <img ng-src="{{details.posters.detailed}}" />
+  <h1 ng-bind="details.title"></h1>
+</div>
+<div class="row values">
+  <div class="col">
+    <div>Year</div>
+    <div ng-bind="details.year"></div>
+  </div>
+  <div class="col">
+    <div>Score</div>
+    <div ng-bind="details.ratings.audience_score"></div>
+  </div>
+  <div class="col">
+    <div>Time</div>
+    <div ng-bind="details.runtime"></div>
+  </div>
+</div>
+<div class="list">
+  <div class="item item-divider">
+    Reviews
+  </div>
+
+  <div class="item" ng-repeat="review in reviews">
+    <div>
+      <span class="critic" ng-bind="review.critic"></span>
+      <span class="date" ng-if="review.date">({{review.date}})</span>
+    </div>
+
+    <div class="quote" ng-bind="review.quote"></div>
+    <div class="publication" ng-bind="review.publication"></div>
+  </div>
+</div>

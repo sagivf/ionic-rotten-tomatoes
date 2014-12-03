@@ -33,11 +33,11 @@
       <ion-header-bar class="bar bar-header bar-positive">
         <h1 class="title">Ionic Tomatoes</h1>
       </ion-header-bar>
-      <div class="bar bar-subheader">
+      <div class="bar bar-subheader" ng-if="subHeader">
         <ui-view name="sub-header"></ui-view>
       </div>
-      <ion-content class="has-header has-subheader" ng-class="{ 'full-screen': fullScreen }">
-        <ion-nav-view name="main"></ion-nav-view>
+      <ion-content class="has-header" ng-class="{ 'full-screen': fullScreen, 'has-subheader': subHeader }">
+        <ion-nav-view name="main" animation="slide-left-right"></ion-nav-view>
       </ion-content>
     </ion-pane>
   </body>

@@ -63,7 +63,7 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
       try {
         var params = generateParams('movies', { query: query });
 
-        $http.jsonp(urls.movies.path, { params: params }).then(function(res){
+        $http.jsonp(urls.movies.path, { params: params }).then(function (res) {
           defer.resolve(res.data.movies);
         }, defer.reject);
       }
@@ -73,6 +73,18 @@ angular.module('movies').factory('moviesService', function($http, urls, $q){
       }
 
       return defer.promise;
+    },
+    fetchMovie: function (id) {
+      var params = generateParams('movie', {});
+      return $http.jsonp(urls.movie.path.replace(':movie', id), { params: params });
+    },
+    fetchReviews: function(movieId){
+      var defer = $q.defer();
+      var params = generateParams('reviews', {});
+
+      $http.jsonp(urls.reviews.path.replace(':movie', movieId), { params: params }).then(defer.resolve, defer.reject);
+
+      return defer;
     }
   }
 });

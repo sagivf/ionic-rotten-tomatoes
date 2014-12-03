@@ -20,6 +20,20 @@ angular.module('movies', [])
             { name: 'callback', apiParam: 'callback', value: 'JSON_CALLBACK' },
             { name: 'apiKey', apiParam: 'apikey', value: apiKey }
           ]
+        },
+        movie: {
+          path: 'http://api.rottentomatoes.com/api/public/v1.0/movies/:movie.json',
+          params: [
+            { name: 'callback', apiParam: 'callback', value: 'JSON_CALLBACK' },
+            { name: 'apiKey', apiParam: 'apikey', value: apiKey }
+          ]
+        },
+        reviews: {
+          path: 'http://api.rottentomatoes.com/api/public/v1.0/movies/:movie/reviews.json',
+          params: [
+            { name: 'callback', apiParam: 'callback', value: 'JSON_CALLBACK' },
+            { name: 'apiKey', apiParam: 'apikey', value: apiKey }
+          ]
         }
       }
     }

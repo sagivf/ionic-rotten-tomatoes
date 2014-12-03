@@ -7821,11 +7821,41 @@ $ios-transition-box-shadow-end: -200px 0px 200px rgba(0,0,0,0.15), -5px 0px 5px 
   padding: 0; }
 .state-movies .item-input-inset {
   padding: 5px; }
-.state-movies .no-data {
+.state-movies .centered-text {
   height: 100%; }
-  .state-movies .no-data h1 {
+  .state-movies .centered-text h1 {
     display: table-cell;
     vertical-align: middle; }
+
+.state-movie {
+  width: 500px;
+  height: 500px; }
+  .state-movie .movie-head {
+    text-align: center;
+    margin-top: 20px; }
+  .state-movie .values .col {
+    cursor: pointer;
+    padding: 20px 0;
+    font-size: 2em;
+    text-align: center;
+    border-color: #8a6de9;
+    background-color: #8a6de9;
+    margin: 10px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 2px 2px 1px #ccc; }
+    .state-movie .values .col > div:first-child {
+      margin-bottom: 20px; }
+  .state-movie .list .item .quote {
+    white-space: normal; }
+  .state-movie .list .item .critic {
+    font-size: 1.1em;
+    font-weight: bold; }
+  .state-movie .list .item .date {
+    font-size: 0.8em; }
+  .state-movie .list .item .publication {
+    margin-top: 5px;
+    font-size: 0.8em; }
 
 .loading-container .loading {
   background: transparent; }

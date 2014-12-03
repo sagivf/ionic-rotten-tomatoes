@@ -1,6 +1,8 @@
 angular.module('movies').controller('moviesCtrl', function($scope, $rootScope, moviesStore){
   this.moviesStore = moviesStore;
 
+  $rootScope.subHeader = true;
+
   $scope.$watch(angular.bind(this, function () {
     return this.moviesStore.data;
   }), function (newVal) {
