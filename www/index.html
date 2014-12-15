@@ -11,6 +11,7 @@
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
 
+    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
@@ -20,25 +21,27 @@
     <!-- your app's js -->
     <script src="js/public/tomatoes.min.js"></script>
     <script src="js/public/templates.js"></script>
-    <!--
-    <script src="modules/movies/module.js"></script>
-    <script src="modules/movies/api.srv.js"></script>
-    <script src="modules/movies/list.ctrl.js"></script>
-    <script src="modules/movies/item.ctrl.js"></script>
-    <script src="modules/movies/search.drv.js"></script>
-    <script src="modules/movies/route.js"></script>
 
-    <script src="modules/tomatoes/module.js"></script>
-    <script src="modules/tomatoes/route.js"></script>
-    -->
+    <!--<script src="modules/movies/module.js"></script>-->
+    <!--<script src="modules/movies/api.srv.js"></script>-->
+    <!--<script src="modules/movies/list.ctrl.js"></script>-->
+    <!--<script src="modules/movies/item.ctrl.js"></script>-->
+    <!--<script src="modules/movies/search.drv.js"></script>-->
+    <!--<script src="modules/movies/route.js"></script>-->
+
+    <!--<script src="modules/tomatoes/module.js"></script>-->
+    <!--<script src="modules/tomatoes/route.js"></script>-->
+
   </head>
-  <body ng-app="tomatoes" class="{{'state-' + stateName}}">
-    <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7">
-      <ion-nav-back-button class="button-clear"  ng-click="goBack()">
-        <i class="ion-arrow-left-c"></i> Back
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <ion-nav-view animation="slide-left-right">
-    </ion-nav-view>
+  <body ng-app="tomatoes">
+    <div  class="{{'state-' + stateName}}">
+      <ion-nav-bar class="bar-positive" animation="nav-title-slide-ios7">
+        <ion-nav-back-button class="button-clear"  ng-click="goBack()">
+          <i class="ion-arrow-left-c"></i> Back
+        </ion-nav-back-button>
+      </ion-nav-bar>
+      <ion-nav-view animation="slide-left-right">
+      </ion-nav-view>
+    </div>
   </body>
 </html>

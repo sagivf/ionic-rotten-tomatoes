@@ -1,10 +1,10 @@
-angular.module('tomatoes', ['ionic', 'debounce', 'movies'])
+angular.module('tomatoes', ['ngCordova','ionic', 'debounce', 'movies'])
 
   .config(function(urlsProvider){
     urlsProvider.setApiKey('7ue5rxaj9xn4mhbmsuexug54');
   })
 
-  .run(function($ionicPlatform, $rootScope, $ionicLoading, $window) {
+  .run(function($ionicPlatform, $rootScope, $ionicLoading, $window, $cordovaFacebook) {
     $ionicPlatform.ready(function() {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
       // for form inputs)
